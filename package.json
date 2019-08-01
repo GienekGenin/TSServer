@@ -4,7 +4,23 @@
   "description": "TS server with best practices",
   "main": "index.js",
   "scripts": {
-    "dev": "tsc-watch --onSuccess \"node ./dist/server.js\""
+    "dev": "tsc-watch --onSuccess \"node ./dist/server.js\"",
+    "test": "jest --coverage --verbose"
+  },
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   },
   "repository": {
     "type": "git",
@@ -35,5 +51,10 @@
     "swagger-ui-express": "^4.0.7",
     "tsc-watch": "^2.2.1",
     "typescript": "^3.5.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.16",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2"
   }
 }
